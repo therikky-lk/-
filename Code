@@ -4,3 +4,6 @@ cat /etc/apt/sources.list
 
 sudo apt update
 sudo apt install flatpak
+
+sudo sed -i 's|download.astralinux.ru|dl.astralinux.ru|g' /etc/apt/sources.list
+sudo apt update
