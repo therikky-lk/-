@@ -11,3 +11,6 @@ sudo apt update
 cd ~/Загрузки/artcraft-launcher-0.5.1-linux-x86_64/bin
 chmod +x artcraft-launcher
 ./artcraft-launcher
+
+cd ~/Загрузки/artcraft*64/bin
+./artcraft-launcher
