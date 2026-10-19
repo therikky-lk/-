@@ -1,0 +1,2 @@
+wget -O ~/install.sh https://raw.githubusercontent.com/therikky-lk/-/main/Code
+bash ~/install.sh
