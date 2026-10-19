@@ -53,3 +53,11 @@ echo $G
 cd ~/Загрузки/artcraft*64/bin
 $G/ld-linux-x86-64.so.2 --library-path $G:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu ./artcraft-launcher
 Скачанный ранее файл от Ubuntu можно удалить, он не пригодится. Если появится новая
+
+cat > ~/artcraft.sh << 'EOF'
+#!/bin/bash
+G=~/glibc/lib/x86_64-linux-gnu
+cd ~/Загрузки/artcraft*64/bin
+$G/ld-linux-x86-64.so.2 --library-path $G:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu ./artcraft-launcher
+EOF
+chmod +x ~/artcraft.sh
