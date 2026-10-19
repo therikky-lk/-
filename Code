@@ -152,3 +152,6 @@ cp $D/figcraft.desktop ~/.local/share/applications/
 ```
 
 Чтобы проверить, что всё работает, выполните `~/figcraft.sh`. Если откроется окно FigCraft, значок на рабочем столе тоже будет работать. Если появится ошибка, пришлите снимок.
+
+sed -i "s|^P=.*|P=\$(ls -d ~/Загрузки/figcraft-*-linux-x86_64 \| head -1)/bin/figcraft|" ~/figcraft.sh
+~/figcraft.sh
