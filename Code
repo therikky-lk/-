@@ -83,3 +83,10 @@ https://github.com/storytold/craft-launcher/releases/download/v0.5.1/artcraft-la
 https://github.com/storytold/photocraft/releases/download/v0.10.0/photocraft-0.10.0-linux-x86_64.deb
 
 https://github.com/storytold/photocraft/releases/download/v0.10.0/photocraft-0.10.0-linux-x86_64.tar.gz
+
+cd ~/Загрузки
+tar -xzf photocraft-0.10.0-linux-x86_64.tar.gz
+G=~/glibc/lib/x86_64-linux-gnu
+P=$(find ~/Загрузки/photocraft-0.10.0-linux-x86_64 -path '*/bin/*' -type f | head -1)
+echo $P
+$G/ld-linux-x86-64.so.2 --library-path $G:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu $P
