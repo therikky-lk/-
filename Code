@@ -14,3 +14,11 @@ chmod +x artcraft-launcher
 
 cd ~/Загрузки/artcraft*64/bin
 ./artcraft-launcher
+
+https://mirror.yandex.ru/ubuntu/pool/main/g/glibc/libc6_2.35-0ubuntu3.15_amd64.deb
+Официальные зеркала Ubuntu:
+http://de.archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6_2.35-0ubuntu3.15_amd64.deb
+http://nl.archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6_2.35-0ubuntu3.15_amd64.deb
+http://mirrors.kernel.org/ubuntu/pool/main/g/glibc/libc6_2.35-0ubuntu3.15_amd64.deb
+Страница пакета со всеми зеркалами:
+https://packages.ubuntu.com/jammy-updates/amd64/libc6/download
