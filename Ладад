@@ -46,3 +46,10 @@ cd ~/Загрузки
 rm -rf artcraft-launcher-* photocraft-*-linux-x86_64 figcraft-*-linux-x86_64 wordcraft-*-linux-x86_64
 rm -f *aarch64* *riscv64* libc6_2.35-*ubuntu*.deb
 rm -f ~/photocraft.sh ~/figcraft.sh
+
+rm -rf ~/craft ~/glibc ~/.local/share/artcraft-launcher
+rm -f ~/craft-run.sh ~/run-*.sh ~/artcraft.sh ~/photocraft.sh ~/figcraft.sh ~/craft.sh
+rm -f ~/install.sh ~/install2.sh ~/craft.log
+rm -f ~/Desktops/Desktop1/*craft*.desktop
+rm -f ~/.local/share/applications/*craft*.desktop
+rm -rf ~/Загрузки/*craft* ~/Загрузки/libc6_*.deb
