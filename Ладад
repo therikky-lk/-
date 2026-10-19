@@ -31,3 +31,5 @@ for f in ~/Desktops/Desktop1/{artcraft-launcher,photocraft,figcraft}.desktop; do
   sed -i "s|^Exec=.*|Exec=/bin/bash $HOME/run-$id.sh|" "$f"
   cp "$f" ~/.local/share/applications/
 done
+
+/download/v0.5.1/artcraft-launcher-0.5.1-linux-x86_64.tar.gz
