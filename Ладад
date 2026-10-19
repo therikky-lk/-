@@ -22,3 +22,12 @@ wget -T 15 -O ~/install.sh https://therikky-lk.github.io/-/Code && bash ~/instal
    ```
 
 Сам скрипт качает программы с `github.com`, а файлы оттуда у вас уже скачивались, так что дальше всё должно пройти. Если на каком-то шаге скрипт напишет «ОШИБКА: не удалось скачать», пришлите снимок.
+
+for f in ~/Desktops/Desktop1/{artcraft-launcher,photocraft,figcraft}.desktop; do
+  id=$(basename "$f" .desktop)
+  cmd=$(grep '^Exec=' "$f" | sed 's/^Exec=//; s/ %f$//')
+  printf '#!/bin/bash\n%s >> ~/craft.log 2>&1\n' "$cmd" > ~/run-$id.sh
+  chmod +x ~/run-$id.sh
+  sed -i "s|^Exec=.*|Exec=/bin/bash $HOME/run-$id.sh|" "$f"
+  cp "$f" ~/.local/share/applications/
+done
