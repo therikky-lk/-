@@ -61,3 +61,17 @@ cd ~/Загрузки/artcraft*64/bin
 $G/ld-linux-x86-64.so.2 --library-path $G:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu ./artcraft-launcher
 EOF
 chmod +x ~/artcraft.sh
+
+ICON=$(find ~/Загрузки/artcraft*64/share -name '*.png' | sort | tail -1)
+D=~/Desktops/Desktop1
+mkdir -p $D
+cat > $D/artcraft.desktop << EOF
+[Desktop Entry]
+Type=Application
+Name=ArtCraft
+Exec=$HOME/artcraft.sh
+Icon=$ICON
+Terminal=false
+EOF
+chmod +x $D/artcraft.desktop
+cp $D/artcraft.desktop ~/.local/share/applications/
