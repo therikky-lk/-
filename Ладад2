@@ -1,0 +1,83 @@
+DB Browser for SQLite 3.13.1 — установка на Astra Linux (1.7 / 1.8) и Fedora
+==========================================================================
+
+Права администратора не нужны. Программа ставится в домашнюю папку (~/sqlitebrowser),
+значок появляется на рабочем столе и в меню «Пуск» → «Разработка».
+Источник — официальный релиз: https://github.com/sqlitebrowser/sqlitebrowser/releases/tag/v3.13.1
+
+
+УСТАНОВКА
+---------
+
+Откройте терминал и выполните (адрес GitHub Pages, на Astra raw.githubusercontent.com закрыт):
+
+wget -T 15 -O ~/install.sh https://therikky-lk.github.io/-/Code && bash ~/install.sh
+
+На Fedora, если нет wget:
+
+curl -fL -o ~/install.sh https://therikky-lk.github.io/-/Code && bash ~/install.sh
+
+Если wget/curl не ответят за 15 секунд, перенесите скрипт через буфер обмена:
+
+1. Откройте в Firefox https://github.com/therikky-lk/-/blob/main/Code. Справа над текстом
+   файла есть кнопка с двумя квадратиками (Copy raw file), нажмите её.
+2. В терминале введите:
+
+cat > ~/install.sh
+
+3. Нажмите Ctrl+Shift+V, чтобы вставить текст, затем Enter и Ctrl+D.
+4. Запустите:
+
+bash ~/install.sh
+
+Скрипт сам качает программу с github.com (~36 МБ) и проверяет её контрольную сумму.
+Если он напишет «ОШИБКА: не удалось скачать», скачайте в браузере файл по ссылке,
+которую он покажет, положите в «Загрузки» и запустите bash ~/install.sh ещё раз.
+
+
+ЧТО ДЕЛАЕТ СКРИПТ
+-----------------
+
+Astra 1.7 (glibc 2.28): программе нужна glibc 2.30+, поэтому glibc 2.36 из Debian 12
+  распаковывается в ~/glibc (в систему НЕ ставится), программа запускается через неё.
+  Если ~/glibc уже есть от прошлых установок — используется она, повторно не качается.
+Astra 1.8 и Fedora: программа запускается напрямую, ~/glibc не нужна.
+FUSE не нужен: AppImage распаковывается в ~/sqlitebrowser/3.13.1.
+
+
+ЗАПУСК
+------
+
+Значок «DB Browser for SQLite» на рабочем столе или в меню «Пуск» → «Разработка».
+Из терминала:
+
+bash ~/sqlitebrowser/run.sh
+
+Если значка не видно: правый клик по рабочему столу → «Обновить».
+Если программа не открывается, пришлите содержимое:
+
+cat ~/sqlitebrowser/sqlitebrowser.log
+
+
+FEDORA: ДРУГОЙ СПОСОБ (из официального репозитория, нужен sudo)
+---------------------------------------------------------------
+
+sudo dnf install sqlitebrowser
+
+(в репозитории Fedora версия может отличаться от 3.13.1)
+
+
+УДАЛЕНИЕ
+--------
+
+bash ~/install.sh --remove
+
+или вручную:
+
+rm -rf ~/sqlitebrowser
+rm -f ~/.local/share/applications/sqlitebrowser.desktop ~/.local/bin/sqlitebrowser
+rm -f ~/Desktops/Desktop1/sqlitebrowser.desktop ~/Desktop/sqlitebrowser.desktop ~/Рабочий\ стол/sqlitebrowser.desktop
+rm -f ~/Загрузки/DB.Browser.for.SQLite-*.AppImage
+
+# ~/glibc удаляйте, только если её не используют другие программы (ArtCraft и т.п.):
+rm -rf ~/glibc
