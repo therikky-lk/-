@@ -1,3 +1,6 @@
 sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 sudo sed -i 's|^deb cdrom|#deb cdrom|; s|^#deb \(.*repository-base\)|deb \1|; s|^#deb \(.*repository-extended\)|deb \1|' /etc/apt/sources.list
 cat /etc/apt/sources.list
+
+sudo apt update
+sudo apt install flatpak
